@@ -166,7 +166,7 @@ class Camera:
 
         picture = self._template.copy()
         for i in range(self._pic_dims.totalNumPictures):
-            shot = Image.open(self._pictures[i])
+            shot = Image.open(self._pictures[i]).convert('RGB')
             resized = shot.resize(self._pic_dims.thumbnailSize)
             picture.paste(resized, self._pic_dims.thumbnailOffset[i])
 
